@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .news-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .news-article {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+</style>
+<title>News API Example</title>
+</head>
+<body>
+
+<div class="news-container" id="news-container"></div>
+
+<script>
+  const newsContainer = document.getElementById("news-container");
+
+  const apiKey = 'c4ea3fb0b97e457ab023a954d1b90f0c';
+  const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+
+  async function fetchNews() {
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+
+      if (data.status === "ok") {
+        const articles = data.articles;
+        articles.forEach(article => {
+          const newsArticle = document.createElement("div");
+          newsArticle.className = "news-article";
+          newsArticle.innerHTML = `
+            <h2>${article.title}</h2>
+            <p>${article.description}</p>
+            <a href="${article.url}" target="_blank">Read more</a>
+          `;
+          newsContainer.appendChild(newsArticle);
+        });
+      } else {
+        console.error("Error fetching news");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
+  fetchNews();
+</script>
+
+</body>
+</html>
