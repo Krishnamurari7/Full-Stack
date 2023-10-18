@@ -1,0 +1,14 @@
+div{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border: 2px solid black;
+}
+.box2{
+    transform: perspective(15px) translateZ(-20px);
+}
+
+.box3{
+    margin-left: 200px;
+    transform: perspective(350px) scaleZ(6) rotateZ(15deg) rotateX(20deg);
+}
