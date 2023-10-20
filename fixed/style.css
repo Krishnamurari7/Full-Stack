@@ -1,0 +1,21 @@
+.wrapper{
+    height: 1000px;
+    width: 100vw;
+    background-color: yellow;
+}
+div{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    color: rgb(0, 0, 0);
+    background-color: aqua;
+    border: 2px solid black;
+}
+/* #three{
+    position: relative;
+    top: 40px;
+    left: 60px;
+} */
+#one{
+    position: fixed;
+}
