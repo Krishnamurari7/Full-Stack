@@ -1,6 +1,8 @@
 // number, null, string,symbol,boolean,bigint,undefined
 const score = 100
 console.log(typeof score)
+const mark = 43.8
+console.log(typeof mark)
 const id = true
 console.log(typeof id)
 const namee = "krishna"
